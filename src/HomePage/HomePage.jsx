@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { userActions } from '../_actions';
-import Chart from 'chart.js';
-import axios from 'axios';
+//import Chart from 'chart.js';
+//import axios from 'axios';
 
 
 class HomePage extends React.Component {
@@ -47,6 +47,40 @@ class HomePage extends React.Component {
         );
     }
 }
+
+function Data() {
+    const [title, setTitle] = useState('')
+    const [budget, setBudget] = useState('')
+    const submit = e => {
+      e.preventDefault()
+      fetch(`https://hooks.zapier.com/hooks/catch/1239764/oo73gyz/`, {
+        method: 'POST',
+        body: JSON.stringify({ title, budget }),
+      })
+    }
+    return (
+      <form>
+        <label htmlFor="budget">Your budget</label>
+        <textarea
+          name="budget"
+          value={budget}
+          onChange={e => setBudget(e.target.value)}
+          />
+        <br />
+        <label htmlFor="title">Your title</label> <br />
+        <input
+          type="title"
+          name="title"
+          value={title}
+          onChange={e => setTitle(e.target.value)}
+         />
+        <br />
+        <button type="submit">Send it!</button>
+      </form>
+    )
+  }
+  
+  
 function mapState(state) {
     const { users, authentication } = state;
     const { user } = authentication;

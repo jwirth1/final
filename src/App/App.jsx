@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-
 import { history } from '../_helpers';
 import { alertActions } from '../_actions';
 import { PrivateRoute } from '../_components';
@@ -42,6 +41,7 @@ class App extends React.Component {
         );
     }
 }
+
 
 function mapState(state) {
     const { alert } = state;
