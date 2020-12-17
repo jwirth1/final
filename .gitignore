@@ -1,5 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+doc/*
+
 # dependencies
 /node_modules
 /.pnp
@@ -23,5 +25,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # sensitive
-.username
-.password
+'password/cache' 
+'username/cache' 
+/username
+/password
