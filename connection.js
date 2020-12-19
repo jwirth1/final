@@ -2,12 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const port = 3000;
-const bodyParser = require('body-parser');
 
 const {MongoClient} = require('mongodb');
 
 app.use(cors());
-const bodyParser = require('body-parser');
 
 /**
  * Connection URI. Update <username>, <password>, and <your-cluster-url> to reflect your cluster.
